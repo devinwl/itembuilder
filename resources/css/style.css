@@ -1,0 +1,27 @@
+.item_container {
+	padding: 20px;
+	background: #ccc;
+	overflow: hidden;
+}
+
+.item_list > ul, .item_container > ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.item_list > ul > li, .item_container > ul > li {
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.item_list {
+	width: 30%;
+	float: left;
+}
+
+.build_container {
+	width: 70%;
+	float: left;
+}
