@@ -7,8 +7,10 @@
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <script src="resources/js/itembuilder.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/bootstrap-select.js"></script>
     <link rel="stylesheet" href="resources/css/style.css">
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/bootstrap-select.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid">
@@ -18,23 +20,28 @@
             </div>
 
             <div class="build_container span8">
+                <select id="heroes" class="clearfix selectpicker">
+                    <option>Tidehunter </option>
+                    <option>Kunkka </option>
+                    <option>Phantom Lancer </option>
+                </select>
                 <div id="errors"></div>
-                <h2>Starting Items</h2>
+                <h2 id="starting_header">Starting Items (0 gold)</h2>
                 <div id="starting" class="item_container">
                     <ul></ul>
                 </div>
 
-                <h2>Early Game</h2>
+                <h2 id="early_header">Early Game (0 gold)</h2>
                 <div id="early" class="item_container">
                     <ul></ul>
                 </div>
 
-                <h2>Core Items</h2>
+                <h2 id="core_header">Core Items (0 gold)</h2>
                 <div id="core" class="item_container">
                     <ul></ul>
                 </div>
 
-                <h2>Situational Items</h2>
+                <h2 id="luxury_header">Situational Items (0 gold)</h2>
                 <div id="luxury" class="item_container">
                     <ul></ul>
                 </div>

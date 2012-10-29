@@ -19,6 +19,8 @@ $(function() {
 		});
 	});
 
+	$("#heroes").selectpicker();
+
 	$(".item_container").sortable({
 		connectWith: ".item_container",
 		items: ".dropped",
@@ -59,8 +61,25 @@ $(function() {
 		$("#starting > ul > li").each( function(i, item) {
 			cost = parseInt(cost) + parseInt($(item).attr("cost"));
 		});
-
 		var starting_cost = cost;
+
+		var cost = 0;
+		$("#early > ul > li").each( function(i, item) {
+			cost = parseInt(cost) + parseInt($(item).attr("cost"));
+		});
+		var early_cost = cost;
+
+		var cost = 0;
+		$("#core > ul > li").each( function(i, item) {
+			cost = parseInt(cost) + parseInt($(item).attr("cost"));
+		});
+		var core_cost = cost;
+
+		var cost = 0;
+		$("#luxury > ul > li").each( function(i, item) {
+			cost = parseInt(cost) + parseInt($(item).attr("cost"));
+		});
+		var luxury_cost = cost;
 
 		if(starting_cost > 603) {
 			$("#errors").html($("<div>").addClass("alert").html("<strong>Hold it!</strong> Your starting item costs are more than 603 gold."));
@@ -68,5 +87,10 @@ $(function() {
 		else {
 			$("#errors").html("");
 		}
+
+		$("#starting_header").html("Starting Items ("+starting_cost+" gold)");
+		$("#early_header").html("Early Game ("+early_cost+" gold)");
+		$("#core_header").html("Core Items ("+core_cost+" gold)");
+		$("#luxury_header").html("Situational Items ("+luxury_cost+" gold)");
 	}
 });
