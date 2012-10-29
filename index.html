@@ -6,35 +6,41 @@
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
     <script src="resources/js/itembuilder.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="resources/css/style.css">
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="items" class="item_list">
-        <ul></ul>
-    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div id="items" class="item_list span2">
+                <ul></ul>
+            </div>
 
-    <div class="build_container">
-        <h2>Starting Items</h2>
-        <div id="starting" class="item_container">
-            <ul></ul>
+            <div class="build_container span10">
+                <h2>Starting Items</h2>
+                <div id="starting" class="item_container">
+                    <ul></ul>
+                </div>
+
+                <h2>Early Game</h2>
+                <div id="early" class="item_container">
+                    <ul></ul>
+                </div>
+
+                <h2>Core Items</h2>
+                <div id="core" class="item_container">
+                    <ul></ul>
+                </div>
+
+                <h2>Situational Items</h2>
+                <div id="luxury" class="item_container">
+                    <ul></ul>
+                </div>
+
+                <input type="submit" id="submit_build" value="Generate Build" />
+            </div>
         </div>
-
-        <h2>Early Game</h2>
-        <div id="early" class="item_container">
-            <ul></ul>
-        </div>
-
-        <h2>Core Items</h2>
-        <div id="core" class="item_container">
-            <ul></ul>
-        </div>
-
-        <h2>Situational Items</h2>
-        <div id="luxury" class="item_container">
-            <ul></ul>
-        </div>
-
-        <input type="submit" id="submit_build" value="Generate Build" />
     </div>
 </body>
 </html>

@@ -8,7 +8,7 @@ $(function() {
 	$.getJSON("resources/items.json", function(json) {
 		$.each(json.items, function(i, item) {
 			if(item.itemVisible == "1")
-				$("<li>").attr("name", item.itemNameBasic).attr("cost", item.itemCost).addClass("item").html($("<img/>").attr("src", "resources/images/items/"+item.itemNameBasic+".png")).appendTo("#items > ul");
+				$("<li>").attr("name", item.itemNameBasic).attr("cost", item.itemCost).addClass("item").html($("<img/>").attr("src", "resources/img/items/"+item.itemNameBasic+".png")).appendTo("#items > ul");
 		});
 
 		$(".item").draggable({
@@ -32,7 +32,7 @@ $(function() {
 		drop: function(event, ui) {
 			var name = $(ui.draggable).attr("name");
 			var cost = $(ui.draggable).attr("cost");
-			var contents = $("<li>").attr("name", name).attr("cost", cost).addClass("dropped").html($("<img/>").attr("src", "resources/images/items/"+name+".png"));
+			var contents = $("<li>").attr("name", name).attr("cost", cost).addClass("dropped").html($("<img/>").attr("src", "resources/img/items/"+name+".png"));
 			var dest = $(this).attr("id");
 			contents.appendTo("#" + dest + " ul");
 		}
