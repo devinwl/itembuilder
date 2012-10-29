@@ -26,15 +26,18 @@ $(function() {
 		receive: function(event, ui) {
 			var dest = $(this).attr("id");
 			$(ui.item).appendTo("#"+dest+" ul");
+			calcGoldCosts();
 		}
 	}).droppable({
 		accept: ".item",
 		drop: function(event, ui) {
 			var name = $(ui.draggable).attr("name");
 			var cost = $(ui.draggable).attr("cost");
-			var contents = $("<li>").attr("name", name).attr("cost", cost).addClass("dropped").html($("<img/>").attr("src", "resources/img/items/"+name+".png")).prepend($("<a>").addClass("item_del").html("X").click(function() { $(this).parent().remove(); }));
+			var contents = $("<li>").attr("name", name).attr("cost", cost).addClass("dropped").html($("<img/>").attr("src", "resources/img/items/"+name+".png")).prepend($("<a>").addClass("item_del").html("X").click(function() { removeItem($(this).parent()); }));
 			var dest = $(this).attr("id");
 			contents.appendTo("#" + dest + " ul");
+
+			calcGoldCosts();
 		}
 	});
 
@@ -45,4 +48,25 @@ $(function() {
 		});
 		return false;
 	});
+
+	function removeItem(item) {
+		$(item).remove();
+		calcGoldCosts();
+	}
+
+	function calcGoldCosts() {
+		var cost = 0;
+		$("#starting > ul > li").each( function(i, item) {
+			cost = parseInt(cost) + parseInt($(item).attr("cost"));
+		});
+
+		var starting_cost = cost;
+
+		if(starting_cost > 603) {
+			$("#errors").html($("<div>").addClass("alert").html("<strong>Hold it!</strong> Your starting item costs are more than 603 gold."));
+		}
+		else {
+			$("#errors").html("");
+		}
+	}
 });
