@@ -16,10 +16,23 @@
 	padding: 0;
 	margin: 0;
 	float: left;
+	position: relative;
 }
 
 .item_list {
 }
 
 .build_container {
+}
+
+ul > li > .item_del {
+display: none;
+position: absolute;
+right: 2px;
+font-size: 1.4em;
+overflow: hidden;
+}
+
+ul > li:hover > .item_del {
+	display: inline;
 }

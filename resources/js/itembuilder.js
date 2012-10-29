@@ -32,7 +32,7 @@ $(function() {
 		drop: function(event, ui) {
 			var name = $(ui.draggable).attr("name");
 			var cost = $(ui.draggable).attr("cost");
-			var contents = $("<li>").attr("name", name).attr("cost", cost).addClass("dropped").html($("<img/>").attr("src", "resources/img/items/"+name+".png"));
+			var contents = $("<li>").attr("name", name).attr("cost", cost).addClass("dropped").html($("<img/>").attr("src", "resources/img/items/"+name+".png")).prepend($("<a>").addClass("item_del").html("X").click(function() { $(this).parent().remove(); }));
 			var dest = $(this).attr("id");
 			contents.appendTo("#" + dest + " ul");
 		}
